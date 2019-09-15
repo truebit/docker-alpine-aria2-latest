@@ -40,4 +40,6 @@ COPY entry_point.sh /
 
 ENTRYPOINT [ "/entry_point.sh" ]
 
+EXPOSE 6800
+
 CMD [ "aria2c" ] 
