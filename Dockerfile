@@ -28,11 +28,7 @@ RUN apk update \
     && rm -r /tmp/* \
     #增加用户与组：aria2
     && addgroup -g "$GID" aria2 \
-    && adduser -D -G aria2 -u "$UID" aria2 \
-    && chown -R ${UID}:${GID} \
-         /app \
-         /usr/local \
-         /var/log 
+    && adduser -D -G aria2 -u "$UID" aria2
 
 #SSL证书
 VOLUME /app/conf/key

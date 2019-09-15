@@ -10,6 +10,10 @@ if [ "$GID" != "1000" ]; then
     groupmod -o -g "$GID" aria2
 fi
 
+chown -R ${UID}:${GID} \
+        /app \
+        /var/log
+
 if [ "$1" = 'aria2c' -a "$(id -u)" = '0' ]; then
     shift
     if [ "$RPC_SECURE" = 'true' ]; then
