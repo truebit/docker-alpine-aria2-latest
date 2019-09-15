@@ -11,8 +11,8 @@ ENV RPC_SECURE=false
 ENV UID=1000
 ENV GID=1000
 
-RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories \
-    && apk update \
+#sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories \
+RUN apk update \
     && apk add --no-cache --virtual .build_deps g++ autoconf make automake libtool cppunit-dev curl \
     && apk add --no-cache su-exec shadow nettle-dev gmp-dev libssh2-dev libxml2-dev zlib-dev gnutls-dev gettext-dev sqlite-dev c-ares-dev  \
     && cd /tmp \
