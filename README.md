@@ -1,4 +1,4 @@
-Aria2 latest ‘master’ branch on Alpine Linux ‘edge’
+Aria2 latest 'master' branch on Alpine Linux 'edge'
 -----------------------------------
 
 ### 0.镜像介绍
@@ -21,6 +21,7 @@ RPC_SECRET=exampleSecret -e RPC_SECURE=true -v /volume1/Downloads:/data -v /volu
 * GID和UID：宿主机的gid和uid，可使用命令`id`得到。不设置可能导致下载文件夹无法写入等问题
 * RPC_SECRET：RPC链接的密码令牌（即token），任意字符。
 * RPC_SECURE：`true`或者其他。true时开启RPC HTTPS
+* ENABLE_AUTH: `true`或者其他。true时下面的RPC_USER/PASSWORD生效
 * RPC_USER：RPC连接用户名，不建议使用。推荐使用RPC_SECRET
 * RPC_PASSWORD：与RPC_USER同时使用。不推荐使用，推荐RPC_SECRET
 
