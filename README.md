@@ -11,7 +11,7 @@ Aria2 latest ‘master’ branch on Alpine Linux ‘edge’
 ### 1.使用
 1. `docker pull truebit/alpine-aria2-latest`
 2. `docker run -e UID=0 -e GID=0 -e 
-RPC_SECRET=exampleSecret -e RPC_SECURE=true -v /volume1/Downloads:/data -v /volume2/docker/conf/key:/app/conf/key -v /volume2/docker/conf:/app/conf truebit/alpine-aria2-latest`
+RPC_SECRET=exampleSecret -e RPC_SECURE=true -v /volume1/Downloads:/data -v /volume2/docker/conf/key:/app/conf/key -v /volume2/docker/conf:/app/conf -p 6888:6800 truebit/alpine-aria2-latest`
 3. 或者自己执行命令：`docker run  truebit/alpine-aria2-latest aria2c --help`
 
 群晖设置请移步：[https://zhuanlan.zhihu.com/p/82595126](https://zhuanlan.zhihu.com/p/82595126)
@@ -29,3 +29,6 @@ RPC_SECRET=exampleSecret -e RPC_SECURE=true -v /volume1/Downloads:/data -v /volu
 * `/data`：下载文件夹
 * `/app/conf/key`：RPC HTTPS证书文件夹。文件夹中证书名须为`aria2.cer`和`aria2.key`
 * `/app/conf`：aria2配置文件夹。如不挂载，则使用docker内部配置
+
+### 4.端口说明
+默认暴露6800端口，自行映射到宿主机上
