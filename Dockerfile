@@ -19,7 +19,7 @@ RUN apk update \
     && curl -fSL https://github.com/aria2/aria2/archive/master.zip -o aria2-master.zip \
     && unzip aria2-master.zip \
     && cd aria2-master \
-    && sed -i 's/1.34.0/1.34.1/g' configure.ac \
+    && sed -i 's/1.35.0/1.35.0master/g' configure.ac \
     && autoreconf -i \
     && ./configure \
     && make -j $(getconf _NPROCESSORS_ONLN) \
