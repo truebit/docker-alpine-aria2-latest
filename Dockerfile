@@ -14,7 +14,7 @@ ENV GID=1000
 #sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories \
 RUN apk update \
     && apk add --no-cache --virtual .build_deps git g++ autoconf make automake libtool cppunit-dev curl \
-    && apk add --no-cache su-exec shadow nettle-dev gmp-dev libssh2-dev libxml2-dev zlib-dev openssl-dev gettext-dev sqlite-dev c-ares-dev  \
+    && apk add --no-cache su-exec ca-certificatesshadow nettle-dev gmp-dev libssh2-dev libxml2-dev zlib-dev openssl-dev gettext-dev sqlite-dev c-ares-dev  \
     && cd /tmp \
     && curl -fSL https://github.com/aria2/aria2/archive/master.zip -o aria2-master.zip \
     && unzip aria2-master.zip \
